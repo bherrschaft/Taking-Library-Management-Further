@@ -7,7 +7,7 @@ public class Book {
     private int pages;
     private String category;
     private boolean isOnLoan;
-    private LocalDate loanDate; // To track the date the book was loaned
+    private LocalDate loanDate;
 
     public Book(String title, String author, int publicationYear, int pages, String category) {
         this.title = title;
@@ -54,12 +54,12 @@ public class Book {
 
     public void loanBook() {
         this.isOnLoan = true;
-        this.loanDate = LocalDate.now(); // Set the loan date to today's date
+        this.loanDate = LocalDate.now();
     }
 
     public void returnBook() {
         this.isOnLoan = false;
-        this.loanDate = null; // Reset the loan date
+        this.loanDate = null;
     }
 
     @Override

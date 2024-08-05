@@ -1,8 +1,10 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Library {
@@ -40,7 +42,7 @@ public class Library {
 
     // Find the book with the most pages
     public Optional<Book> findBookWithMostPages() {
-        return books.stream().max((b1, b2) -> Integer.compare(b1.getPages(), b2.getPages()));
+        return books.stream().max(Comparator.comparingInt(Book::getPages));
     }
 
     // Find all books with more than n pages

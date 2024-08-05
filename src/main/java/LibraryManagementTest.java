@@ -44,5 +44,10 @@ public class LibraryManagementTest {
         System.out.println("Books published in 1949: " + library.findBooksByYear(1949));
         System.out.println("All book titles:");
         library.printAllBookTitles();
+
+        // Additional functionality testing
+        System.out.println("Books in the Fiction category: " + library.findBooksByCategory("Fiction"));
+        System.out.println("Book with the most pages: " + library.findBookWithMostPages().orElse(null));
+        System.out.println("Books with more than 200 pages: " + library.findBooksMoreThanPages(200));
     }
 }
